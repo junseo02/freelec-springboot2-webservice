@@ -79,20 +79,11 @@ public class PostsApiControllerTest {
       .content(new ObjectMapper().writeValueAsString(requestDto)))
       .andExpect(status().isOk());
 
-
-//    ResponseEntity<Long> responseEntity = restTemplate.postForEntity(url, requestDto, Long.class);
-
     //then
     List<Posts> all = postsRepository.findAll();
     assertThat(all.get(0).getTitle()).isEqualTo(title);
     assertThat(all.get(0).getContent()).isEqualTo(content);
 
-//    assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
-//    assertThat(responseEntity.getBody()).isGreaterThan(0L);
-//
-//    List<Posts> all = postsRepository.findAll();
-//    assertThat(all.get(0).getTitle()).isEqualTo(title);
-//    assertThat(all.get(0).getContent()).isEqualTo(content);
 
   }
 
@@ -128,15 +119,9 @@ public class PostsApiControllerTest {
       .content(new ObjectMapper().writeValueAsString(requestDto)))
       .andExpect(status().isOk());
 
-//    ResponseEntity<Long> responseEntity = restTemplate.
-//      exchange(url, HttpMethod.PUT, requestEntity, Long.class);
-
     //then
 
 
-//    assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
-//    assertThat(responseEntity.getBody()).isGreaterThan(0L);
-//
     List<Posts> all = postsRepository.findAll();
     assertThat(all.get(0).getTitle()).isEqualTo(expectedTitle);
     assertThat(all.get(0).getContent()).isEqualTo(expectedContent);
